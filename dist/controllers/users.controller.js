@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateUser = exports.deleteUser = exports.getUser = exports.createPost = exports.getUsers = void 0;
+exports.updateUser = exports.deleteUser = exports.getUser = exports.createUser = exports.getUsers = void 0;
 const database_1 = require("../database");
 function getUsers(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -19,7 +19,7 @@ function getUsers(req, res) {
     });
 }
 exports.getUsers = getUsers;
-function createPost(req, res) {
+function createUser(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const newUser = req.body;
         const conn = yield (0, database_1.connect)();
@@ -29,7 +29,7 @@ function createPost(req, res) {
         });
     });
 }
-exports.createPost = createPost;
+exports.createUser = createUser;
 function getUser(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const id = req.params.id;

@@ -9,17 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.connect = void 0;
-const promise_1 = require("mysql2/promise");
-function connect() {
+const backendAPI_1 = require("./backendAPI");
+function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        const connection = yield (0, promise_1.createPool)({
-            host: 'localhost',
-            user: 'root',
-            database: 'sample_database',
-            connectionLimit: 20
-        });
-        return connection;
+        const backendAPI = new backendAPI_1.BackendAPI(3000);
+        yield backendAPI.listen();
     });
 }
-exports.connect = connect;
+main();

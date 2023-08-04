@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BackendAPI = void 0;
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
-const index_routes_1 = __importDefault(require("./routes/index.routes"));
+const entry_routes_1 = __importDefault(require("./routes/entry.routes"));
 const users_routes_1 = __importDefault(require("./routes/users.routes"));
 class BackendAPI {
     constructor(port) {
@@ -33,8 +33,8 @@ class BackendAPI {
         this.backendAPI.use(express_1.default.json());
     }
     routes() {
-        this.backendAPI.use(index_routes_1.default);
-        this.backendAPI.use('/users', users_routes_1.default);
+        this.backendAPI.use(entry_routes_1.default);
+        this.backendAPI.use('/collection', users_routes_1.default);
     }
     listen() {
         return __awaiter(this, void 0, void 0, function* () {
