@@ -1,3 +1,5 @@
+// using localhost:3000
+
 // Database
 using mysql 
 run mysql : mysql -u root -p         
